@@ -9,6 +9,13 @@ app.post("/login", (req, res) => {
 
   const email = req.body.email;
   const password = req.body.password;
+
+  //check if the email and password is correct
+  if (email === "test@test.com" && password === "test") {
+    console.log("A new member is logged in. :)");
+    res.redirect("http://localhost:3000/members");
+    return;
+  }
 });
 
 app.listen(3001, () => console.log("Server ready"));
