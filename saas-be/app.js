@@ -16,6 +16,8 @@ app.post("/login", (req, res) => {
     res.redirect("http://localhost:3000/members");
     return;
   }
+  console.log("It seems you're not a member yet. :(");
+  res.redirect("http://localhost:3000/login");
 });
 
 app.listen(3001, () => console.log("Server ready"));
