@@ -39,6 +39,12 @@ app.post("/signup", (req, res) => {
 
   if (password !== confirm_password) {
     res.status(400).send("Passwords do not match");
+    return;
+  }
+
+  if (password.length < 8) {
+    res.status(400).send("Password must be more than 8 characters");
+    return;
   }
 
   const accountExists = (email) => {
