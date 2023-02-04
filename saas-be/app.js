@@ -47,10 +47,17 @@ app.post("/signup", (req, res) => {
     return;
   }
 
-  const accountExists = (email) => {
-    //check if account already exists
-    return false;
-  };
+  createAccount(email, password);
+  res.status(200).send("Account created");
 });
+
+const accountExists = (email) => {
+  //check if account already exists
+  return false;
+};
+
+const createAccount = (email, password) => {
+  //create the account
+};
 
 app.listen(3001, () => console.log("Server ready"));
