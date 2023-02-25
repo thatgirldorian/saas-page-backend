@@ -20,4 +20,12 @@ app.post("/login", (req, res) => {
   res.redirect("http://localhost:3000/login");
 });
 
+app.post("/signup", (req, res) => {
+  console.log("Signup data was received!");
+
+  const email = req.body.email;
+  const password = req.body.password;
+  const confirm_password = req.body.confirm_password;
+});
+
 app.listen(3001, () => console.log("Server ready"));
