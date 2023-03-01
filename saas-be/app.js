@@ -31,6 +31,15 @@ app.post("/signup", (req, res) => {
     res.status(400).send("Missing data");
     return;
   }
+
+  if (accountExists(email)) {
+    res.status(403).send("This account already exists");
+  }
+
+  const accountExists = (email) => {
+    //check if account already exists
+    return false;
+  };
 });
 
 app.listen(3001, () => console.log("Server ready"));
