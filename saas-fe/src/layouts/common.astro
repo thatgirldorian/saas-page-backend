@@ -12,9 +12,9 @@ const url = new URL(Astro.request.url).pathname;
   </head>
 
   <body>
-    <div class="bg-[#edecf2] py-5 min-h-screen">
+    <div class="bg-[#edecf2] py-2 min-h-screen">
       <nav
-        class="flex my-10 space-x-10 items-center justify-between flex-wrap px-48"
+        class="flex my-10 space-x-10 items-center justify-between flex-wrap sm:px-18 lg:px-48"
       >
         <div class="flex items-center flex-shrink-0 mr-6 mx-12">
           <h1 class="text-3xl font-extrabold tracking-tight text-[#333132]">
@@ -22,13 +22,13 @@ const url = new URL(Astro.request.url).pathname;
           </h1>
         </div>
 
-        <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-          <div class="lg:flex-grow">
+        <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto sm:ml-5">
+          <div class="lg:flex-grow ">
             <a
               href="/"
               class={url === "/"
                 ? "font-bold"
-                : "mx-5 font-medium text-gray-500 hover:text-gray-900"}>Home</a
+                : "mx-5 sm:ml-2 font-medium text-gray-500 hover:text-gray-900"}>Home</a
             >
             <a
               href="/pricing"
@@ -54,7 +54,7 @@ const url = new URL(Astro.request.url).pathname;
           <div>
             <a
               href="/signup"
-              class="inline-block px-4 py-2 leading-none border rounded-md border-[#4E4081] mt-4 lg:mt-0 font-medium text-white bg-[#4E4081]"
+              class="inline-block px-4 py-2 leading-none border rounded-md border-[#4E4081] mt-4 lg:mt-0 sm:ml-2 font-medium text-white bg-[#4E4081]"
               >Get Dail</a
             >
           </div>
