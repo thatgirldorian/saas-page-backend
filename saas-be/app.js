@@ -26,6 +26,11 @@ app.post("/signup", (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
   const confirm_password = req.body.confirm_password;
+
+  if (!email || !password || !confirm_password) {
+    res.status(400).send("Missing data");
+    return;
+  }
 });
 
 app.listen(3001, () => console.log("Server ready"));
