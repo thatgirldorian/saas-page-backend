@@ -34,6 +34,11 @@ app.post("/signup", (req, res) => {
 
   if (accountExists(email)) {
     res.status(403).send("This account already exists");
+    return;
+  }
+
+  if (password !== confirm_password) {
+    res.status(400).send("Passwords do not match");
   }
 
   const accountExists = (email) => {
