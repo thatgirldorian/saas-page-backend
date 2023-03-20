@@ -1,0 +1,93 @@
+---
+const { title, pageTitle } = Astro.props;
+const url = new URL(Astro.request.url).pathname;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{pageTitle}</title>
+  </head>
+
+  <body>
+    <div class="bg-[#edecf2] py-5 min-h-screen">
+      <nav
+        class="flex my-10 space-x-10 items-center justify-between flex-wrap px-48"
+      >
+        <div class="flex items-center flex-shrink-0 mr-6 mx-12">
+          <h1 class="text-3xl font-extrabold tracking-tight text-[#333132]">
+            Dail.
+          </h1>
+        </div>
+
+        <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+          <div class="lg:flex-grow">
+            <a
+              href="/"
+              class={url === "/"
+                ? "font-bold"
+                : "mx-5 font-medium text-gray-500 hover:text-gray-900"}>Home</a
+            >
+            <a
+              href="/pricing"
+              class={url === "/pricing"
+                ? "font-bold"
+                : "mx-5 font-medium text-gray-500 hover:text-gray-900"}
+              >Pricing</a
+            >
+            <a
+              href="/blog"
+              class={url === "/blog"
+                ? "font-bold"
+                : "mx-5 font-medium text-gray-500 hover:text-gray-900"}>Blog</a
+            >
+            <a
+              href="/login"
+              class={url === "/login"
+                ? "font-bold"
+                : "mx-5 font-medium text-gray-500 hover:text-gray-900"}>Login</a
+            >
+          </div>
+
+          <div>
+            <a
+              href="/signup"
+              class="inline-block px-4 py-2 leading-none border rounded-md border-[#4E4081] mt-4 lg:mt-0 font-medium text-white bg-[#4E4081]"
+              >Get Dail</a
+            >
+          </div>
+        </div>
+      </nav>
+
+      <h2
+        class="text-center pt-10 text-3xl font-extrabold tracking-tight text-[#333132]"
+      >
+        {title}
+      </h2>
+
+      <div class="mt-20 mx-auto text-center max-w-3xl px-10">
+        <slot />
+      </div>
+
+      <footer class="bg-[#edecf2] pt-12 border-t-2 border-gray-200">
+        <nav class="flex justify-center pb-10 space-x-10">
+          <a href="/" class="font-medium text-gray-500 hover:text-gray-900"
+            >Home</a
+          >
+          <a
+            href="/pricing"
+            class="font-medium text-gray-500 hover:text-gray-900">Pricing</a
+          >
+          <a href="/blog" class="font-medium text-gray-500 hover:text-gray-900"
+            >Blog</a
+          >
+        </nav>
+        <p class="text-center text-gray-400 pb-12">
+          Dail - Made remotely with &#10084;&#65039; from all over the &#127757;
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
